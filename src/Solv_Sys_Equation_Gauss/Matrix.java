@@ -3,23 +3,26 @@ package Solv_Sys_Equation_Gauss;
 public class Matrix {
     private float matrix[][];
     private int veriables;
+
     public float[][] GetMatrix() {
         return matrix;
     }
-    public int GetVeriables() {
-        return veriables;
-    }
     public void SetMatrix(float[][] matrix) {
         this.matrix = matrix;
+    }
+    public int GetVeriables() {
+        return veriables;
     }
     public void SetVeriables(int veriables) {
         this.veriables = veriables;
     }
 
+
+
      void Show_Matrix() {
         for (int i = 0; i < veriables; i++) {
             System.out.print("| ");
-            for (int j = 0; j <veriables-1; j++) {
+            for (int j = 0; j <veriables; j++) {
                 System.out.printf("{%.2f}", matrix[i][j]);
             }
             System.out.print(" |\n");

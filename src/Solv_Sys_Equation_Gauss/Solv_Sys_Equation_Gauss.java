@@ -6,12 +6,11 @@ import java.util.Scanner;
 public class Solv_Sys_Equation_Gauss {
     public static void main(String[] args) {
         Matrix matrix = new Matrix();
+        Scanner sc = new Scanner(System.in);
         int counter = 0;
         String temp_series[];
         float temp_matrix[][];
         StringBuilder audit = new StringBuilder("^[-]?(([0-9]+[a])|([0-9]+[.][0-9]+[a])|([a]))?");
-        Scanner sc = new Scanner(System.in);
-
         Pattern pattern = Pattern.compile(audit.toString());
         Pattern sup = Pattern.compile("[-]?(([0-9]*[a-z])|([0-9]+[.][0-9]+)|([a-z]))[=]{1}[-]?(([0-9]+)|([0-9]+[.][0-9]+))+");
         Pattern series;
@@ -67,7 +66,7 @@ public class Solv_Sys_Equation_Gauss {
                         if (temp_series.length == 0 ) {
                             temp_matrix[counter][j] = 1;
                         }
-                        else if (temp_series[0].length()== 1 && temp_series[0].charAt(0) == '-') {
+                        else if (temp_series[0].equals("-")) {
                             temp_matrix[counter][j] = -1;
                         }
                         else
